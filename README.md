@@ -1,6 +1,11 @@
 # YouTube-Video-Grabber
 #### Using Invidio.us RSS feed - Grabs all the latest videos uploaded by various YouTube channels provided
 
+### Disclaimer:
+- _This code doesn't use any official YouTube api_ 
+- _Only uses public RSS feed from invidio.us_
+- _Videos are not downloaded, just offering the links to the videos_
+
 ## Requirements
 * `Python 3.8`
 
