@@ -8,7 +8,7 @@
 
 ```bash
 # clone the repo
-$ git clone https://github.com/Maneesh3/RedditStuffDownloader.git
+$ git clone https://github.com/Maneesh3/YouTube-Video-Grabber.git
 
 # install the requirements
 $ pip3 install -r requirements.txt
