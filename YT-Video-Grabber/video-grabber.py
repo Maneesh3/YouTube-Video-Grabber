@@ -10,7 +10,7 @@ from shutil import copyfile
 
 channelRssLink = 'https://invidio.us/feed/channel/'
 channelLink = 'https://invidio.us/channel/'
-
+_LIMIT_VIDEOS = 3							# number of latest videos
 
 
 def newUrlAdd(newLink):
@@ -57,12 +57,52 @@ def addChannel(channelFeed):
 	json.dump(chaJson,cha,indent = 4, sort_keys=True)
 	cha.close()
 
-def latestVideoGrab():
-	pass
 
-'''
-LOL, TODO main function
-'''
+def viewsConvert(views):
+	_Billion = 1000000000
+	_Million = 1000000
+	_Thousand = 1000
+	viewsInt = int(views)
+	if(viewsInt//_Billion):
+		return "{}B".format(str(round(viewsInt/_Billion,1)))
+	elif(viewsInt//_Million):
+		return "{}M".format(str(round(viewsInt/_Million,1)))
+	elif(viewsInt//_Thousand):
+		return "{}K".format(str(viewsInt//_Thousand))
+	else:
+		return views
+
+
+
+def latestVideoGrab():
+	try:
+		cha = open('channels.json','r')
+		chaJson = json.load(cha)
+		cha.close()
+	except:
+		print('[!] Error getting channels list!\n    Are the URLs added?, see help')
+		exit(0)
+  
+	for channel in chaJson:
+		print('\n\n===== ' + channel + ' =====\n')
+		feedUrl = chaJson[channel]['feed']
+		try:
+			channelFeed = feedparser.parse(feedUrl)
+		except:
+			print('\n[!] Error Getting RSS Feed!, Are you conneced to Internet?\n')
+			continue
+		
+		for ii in range(0,_LIMIT_VIDEOS):
+			print('[{}] {}\n    {}\n    {} views \n'.format(
+				ii,
+				channelFeed['entries'][ii]['title'],
+				channelFeed['entries'][ii]['link'],
+				viewsConvert(channelFeed['entries'][ii]['media_statistics']['views'])
+			))
+
+	
+
+
 
 def main():
 	parser = argparse.ArgumentParser(description = "\033[92m[#] YouTube Video Grabber [#]\033[0m")
