@@ -100,7 +100,12 @@ def latestVideoGrab():
 				viewsConvert(channelFeed['entries'][ii]['media_statistics']['views'])
 			))
 
-	
+'''
+TODO:
+	Create a Flask application GUI interface
+	Show the video Thumbnail
+	provide YouTube link also
+'''
 
 
 
