@@ -40,7 +40,7 @@ Channel json file is created and backedup after every update made
   
 ## TODO:
 - [x] adding list of channels, single channel  
-- [ ] Main list function must be completed
+- [x] Main list function must be completed
 - [ ] Make a flask app for GUI 
 - [ ] Reconstruct the source code using classes and with proper documentation
 
