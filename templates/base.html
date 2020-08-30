@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.css') }}">
+     <title>YouTube_Video_Grabber</title>
+</head>
+<body>
+   <h2>YouTube_Video_Grabber</h2>
+   <div class="container">
+        <form action="/" method="post">
+            <button class="btn btn-outline-primary" name="Get_Updates" type="submit">Get Updates</button>
+        </form>
+    </div>
+    <hr>
+    <div class=".container-fluid" style="margin-left: 30px;margin-right: 30px;">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
