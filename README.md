@@ -21,7 +21,11 @@ $ pip3 install -r requirements.txt
 
 ## Usage
 ```
-usage: 
+Flask app usage: 
+$ python app.py
+Goto http://127.0.0.1:5000
+
+Command-line usage: 
 $ cd YT-Video-Grabber
 $ python video-grabber.py
 
@@ -41,7 +45,7 @@ Channel json file is created and backedup after every update made
 ## TODO:
 - [x] adding list of channels, single channel  
 - [x] Main list function must be completed
-- [ ] Make a flask app for GUI 
+- [ ] Make a flask app for GUI *(Currently working on)*
 - [ ] Reconstruct the source code using classes and with proper documentation
 
 
