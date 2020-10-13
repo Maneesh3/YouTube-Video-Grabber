@@ -8,8 +8,8 @@ import argparse
 import sys
 from shutil import copyfile
 
-channelRssLink = 'https://invidio.us/feed/channel/'
-channelLink = 'https://invidio.us/channel/'
+channelRssLink = 'https://invidious.snopyta.org/feed/channel/'	# changed due to invidio.us shutdown on sept 1st 2020
+channelLink = 'https://invidious.snopyta.org/channel/'
 _LIMIT_VIDEOS = 3							# number of latest videos
 
 
